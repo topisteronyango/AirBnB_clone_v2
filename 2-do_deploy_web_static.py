@@ -1,14 +1,14 @@
 #!/usr/bin/python3
-"""distributes an archive to the coding-max.tech web servers,
+"""distributes an archive to the topisteronyango.tech web servers,
    using the function do_deploy"""
 
 from fabric.api import put, run, env
 from os.path import exists
-env.hosts = ['web-01.coding-max.tech', 'web-02.coding-max.tech']
+env.hosts = ['web-01.topisteronyango.tech', 'web-02.topisteronyango.tech']
 
 
 def do_deploy(archive_path):
-    """distributes an archive to the coding-max.tech web servers"""
+    """distributes an archive to the topisteronyango.tech web servers"""
     if exists(archive_path) is False:
         return False
     file_name = archive_path.split("/")[-1]
@@ -26,3 +26,4 @@ def do_deploy(archive_path):
         return True
     except:
         return False
+
